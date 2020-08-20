@@ -7,5 +7,5 @@
 <p>This is the 'about' page. There's not much here.</p>
 
 <script lang="typescript">
-/* here goes typescript code */
+const ali: number = 123;
 </script>

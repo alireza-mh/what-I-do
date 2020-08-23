@@ -27,7 +27,6 @@ export function get(req, res, next) {
   const { data, content } = grayMatter(post);
 
   const html = marked(content, { renderer });
-  console.log("rendered", html);
 
   if (html) {
     res.writeHead(200, {

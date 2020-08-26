@@ -1,3 +1,11 @@
+<script context="module">
+	export function preload({ params, query }) {
+		return this.fetch(`githubapi.json`).then(r => r.json()).then(githubData => {
+			return { githubData };
+		});
+	}
+</script>
+
 <style>
 	h1, figure, p {
 		text-align: center;
@@ -31,6 +39,11 @@
 		}
 	}
 </style>
+
+<script>
+	export let githubData;
+	console.log(githubData);
+</script>
 
 <svelte:head>
 	<title>Sapper project template</title>

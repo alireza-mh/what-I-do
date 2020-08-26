@@ -8,7 +8,7 @@ const getAllPosts = () =>
     return grayMatter(post).data;
   });
 
-export function get(req, res) {
+export async function get(req, res) {
   res.writeHead(200, {
     "Content-Type": "application/json",
   });

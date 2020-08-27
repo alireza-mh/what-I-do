@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "css-loader": "^4.2.1",
+    "dotenv-webpack": "^2.0.0",
     "express": "^4.17.1",
     "gray-matter": "^4.0.2",
     "highlight.js": "^10.1.2",

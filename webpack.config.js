@@ -5,6 +5,7 @@ const config = require("sapper/config/webpack.js");
 const pkg = require("./package.json");
 const sveltePreprocess = require("svelte-preprocess");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -41,10 +42,11 @@ module.exports = {
         },
       ],
     },
-	mode,
+    mode,
     plugins: [
       // pending https://github.com/sveltejs/svelte/issues/2377
       // dev && new webpack.HotModuleReplacementPlugin(),
+      new Dotenv(),
       new webpack.DefinePlugin({
         "process.browser": true,
         "process.env.NODE_ENV": JSON.stringify(mode),
@@ -60,7 +62,7 @@ module.exports = {
   server: {
     entry: config.server.entry(),
     output: config.server.output(),
-	target: "node",
+    target: "node",
     resolve: { alias, extensions, mainFields },
     externals: Object.keys(pkg.dependencies).concat("encoding"),
     module: {
@@ -81,7 +83,7 @@ module.exports = {
       ],
     },
     mode,
-    plugins: [new WebpackModules()],
+    plugins: [new WebpackModules(), new Dotenv()],
     performance: {
       hints: false, // it doesn't matter if server.js is large
     },

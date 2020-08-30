@@ -1,59 +1,40 @@
 <script context="module">
-	export function preload({ params, query }) {
-		return this.fetch(`githubapi.json`).then(r => r.json()).then(githubData => {
-			return { githubData };
-		});
-	}
+  export async function preload({ params, query }) {
+    const github = await this.fetch(`githubapi.json`).then((r) => r.json());
+	const posts = await this.fetch(`blog.json`).then((r) => r.json());
+	return {github, posts}
+  }
+</script>
+
+<script>
+  import Posts from "../components/Posts.svelte";
+  export let posts;
 </script>
 
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+  h3 {
+    text-align: center;
+    margin: 0 auto;
+  }
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
+  p {
+    margin: 1em auto;
+    text-align: left;
+  }
 </style>
 
-<script>
-	export let githubData;
-	console.log(githubData);
-</script>
-
 <svelte:head>
-	<title>Sapper project template</title>
+  <title>Alireza's Blog</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<h3>Welcome to this blog</h3>
+<p>
+  Here I will share my exprience and technical issues that I find intersting.
+  Also there maybe some none technical content here but I will try to keep them
+  as little as possible.
+</p>
 
-<figure>
-	<img alt='Success Kid' src='successkid.jpg'>
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<h1>Articles</h1>
+{#each posts as post}
+  <Posts {post} />
+{/each}

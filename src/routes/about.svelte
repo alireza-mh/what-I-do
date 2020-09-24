@@ -1,11 +1,5 @@
 <svelte:head>
-	<title>About</title>
+	<title>About Me</title>
 </svelte:head>
 
-<h1>About this site</h1>
-
-<p>This is the 'about' page. There's not much here.</p>
-
-<script lang="typescript">
-const ali: number = 123;
-</script>
+<p>I'm FrontEnd developer insterst with performance and developer exprience problems. I'm also like contributing to open source projects. Here I share my thoughts and expriences hope you find it useful</p>

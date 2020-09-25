@@ -9,6 +9,10 @@ const getGithubRepo = async (authToken) => {
 			node {
 			  ... on Repository {
 				name
+				primaryLanguage{
+					name
+					color
+				}
 				updatedAt
 				stargazers{
 				  totalCount

@@ -12,7 +12,7 @@
       totalCount: number;
     };
     name: string;
-    primarylanguage: {
+    primaryLanguage: {
       name: string;
       color: string;
     };
@@ -44,14 +44,12 @@
 </script>
 
 <svelte:head>
-	<title>About Me</title>
+  <title>About Me</title>
 </svelte:head>
 <p class="justify-text">
-  I'm FrontEnd developer insterst with performance and developer exprience
-  problems. I'm also like contributing to open source projects. Here I share my
-  thoughts and expriences hope you find it useful
+  I'm FrontEnd developer insterst with performance and developer exprience problems. I'm also like contributing to open
+  source projects. Here I share my thoughts and expriences hope you find it useful
 </p>
-
 
 {#each githubDatas as githubData}
   <RepoCard cardInfo={githubData.node} />

@@ -1,5 +1,4 @@
 import fetch from "node-fetch";
-
 const getGithubRepo = async (authToken) => {
   const query = `query {
 		user(login:"alireza-mh") {

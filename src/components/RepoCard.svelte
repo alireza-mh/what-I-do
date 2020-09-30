@@ -1,5 +1,6 @@
 <script lang="ts">
   import { GithubItem } from "src/routes/about.svelte";
+  import StarSvg from "./assets/StarSVG.svelte";
   export let cardInfo: GithubItem;
 </script>
 
@@ -52,7 +53,13 @@
     }
     &:hover {
       color: $text-link;
+      :global.octicon-star {
+        fill: $text-link;
+      }
     }
+  }
+  :global.octicon-star {
+    fill: $text-gray;
   }
 </style>
 
@@ -71,7 +78,7 @@
         style={`background: ${cardInfo.primaryLanguage.color}`} />{cardInfo.primaryLanguage.name}
     </div>
     <div class="repo-card-meta-stargazer">
-      <img src="/assets/star.svg" alt="stargazer" /><span>{cardInfo.stargazers.totalCount}</span>
+      <StarSvg /><span>{cardInfo.stargazers.totalCount}</span>
     </div>
   </div>
 </div>

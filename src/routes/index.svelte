@@ -1,13 +1,13 @@
 <script context="module">
   export async function preload({ params, query }) {
     const github = await this.fetch(`githubapi.json`).then((r) => r.json());
-	const posts = await this.fetch(`blog.json`).then((r) => r.json());
-	return {github, posts}
+    const posts = await this.fetch(`blog.json`).then((r) => r.json());
+    return { github, posts };
   }
 </script>
 
 <script>
-  import Posts from "../components/Posts.svelte";
+  import Posts from "src/components/Posts.svelte";
   export let posts;
 </script>
 
@@ -29,12 +29,13 @@
 
 <h3>Welcome to this blog</h3>
 <p>
-  Here I will share my exprience and technical issues that I find intersting.
-  Also there maybe some none technical content here but I will try to keep them
-  as little as possible.
+  Here I will share my exprience and technical issues that I find intersting. Also there maybe some none technical
+  content here but I will try to keep them as little as possible.
 </p>
 
 <h1>Articles</h1>
 {#each posts as post}
-  <Posts {post} />
+  <a rel="prefetch" class="link-no-style" href="blog/{post.slug}">
+    <Posts {post} />
+  </a>
 {/each}

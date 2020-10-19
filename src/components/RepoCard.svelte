@@ -22,9 +22,11 @@
       }
     }
   }
+
   .repo-card-meta {
     display: flex;
   }
+
   .repo-card-description,
   .repo-card-meta-stargazer,
   .repo-card-meta-language {
@@ -75,10 +77,11 @@
     <div class="repo-card-meta-language">
       <span
         class="repo-card-meta-language-bullet"
-        style={`background: ${cardInfo.primaryLanguage.color}`} />{cardInfo.primaryLanguage.name}
+        style={`background: ${cardInfo.primaryLanguage ? cardInfo.primaryLanguage.color : null}`} />{cardInfo.primaryLanguage ? cardInfo.primaryLanguage.name : ''}
     </div>
     <div class="repo-card-meta-stargazer">
-      <StarSvg /><span>{cardInfo.stargazers.totalCount}</span>
+      <StarSvg />
+      <span>{cardInfo.stargazers.totalCount}</span>
     </div>
   </div>
 </div>

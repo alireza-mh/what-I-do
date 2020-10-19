@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script context="module" lang="typescript">
   export function preload({ params, query }) {
     return this.fetch(`/githubapi.json`)
       .then((r) => r.json())
@@ -25,7 +25,7 @@
   };
 </script>
 
-<script lang="ts">
+<script lang="typescript">
   import RepoCard from "src/components/RepoCard.svelte";
 
   export let githubs: IGithub;

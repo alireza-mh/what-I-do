@@ -8,19 +8,16 @@
 </script>
 
 <style>
-.post__date{
-
-}
-.post__title{
-
-}
-.post__description{
-
-}
+  .post__date {
+  }
+  .post__title {
+  }
+  .post__description {
+  }
 </style>
 
 <div class="post">
-<span class="post__title">{post.title}</span>
-<span class="post__title">{post.date}</span>
-<p class="post__date">{post.description}</p>
+  <span class="post__title">{post.title}</span>
+  <span class="post__title">{post.date}</span>
+  <p class="post__date">{post.description}</p>
 </div>

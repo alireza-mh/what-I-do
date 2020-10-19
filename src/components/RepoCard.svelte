@@ -75,7 +75,7 @@
     <div class="repo-card-meta-language">
       <span
         class="repo-card-meta-language-bullet"
-        style={`background: ${cardInfo.primaryLanguage.color}`} />{cardInfo.primaryLanguage.name}
+        style={`background: ${cardInfo.primaryLanguage?.color}`} />{cardInfo.primaryLanguage?.name}
     </div>
     <div class="repo-card-meta-stargazer">
       <StarSvg /><span>{cardInfo.stargazers.totalCount}</span>

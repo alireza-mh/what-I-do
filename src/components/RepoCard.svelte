@@ -39,6 +39,7 @@
   }
   .repo-card-meta-language {
     display: flex;
+    margin-right: 20px;
     .repo-card-meta-language-bullet {
       height: 16px;
       width: 16px;
@@ -48,7 +49,6 @@
   }
   .repo-card-meta-stargazer {
     display: flex;
-    margin: 0 20px;
     cursor: pointer;
     span {
       margin: 0 5px;
@@ -74,11 +74,12 @@
     {@html cardInfo.descriptionHTML}
   </div>
   <div class="repo-card-meta">
-    <div class="repo-card-meta-language">
-      <span
-        class="repo-card-meta-language-bullet"
-        style={`background: ${cardInfo.primaryLanguage ? cardInfo.primaryLanguage.color : null}`} />{cardInfo.primaryLanguage ? cardInfo.primaryLanguage.name : ''}
-    </div>
+    {#if cardInfo.primaryLanguage}
+      <div class="repo-card-meta-language">
+        <span class="repo-card-meta-language-bullet" style={`background: ${cardInfo.primaryLanguage.color}`} />
+        {cardInfo.primaryLanguage.name}
+      </div>
+    {/if}
     <div class="repo-card-meta-stargazer">
       <StarSvg />
       <span>{cardInfo.stargazers.totalCount}</span>

@@ -43,6 +43,14 @@
   }
 </script>
 
+<style>
+  .card-wrapper {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+</style>
+
 <svelte:head>
   <title>About Me</title>
 </svelte:head>
@@ -50,7 +58,8 @@
   I'm FrontEnd developer insterst with performance and developer exprience problems. I'm also like contributing to open
   source projects. Here I share my thoughts and expriences hope you find it useful
 </p>
-
-{#each githubDatas as githubData}
-  <RepoCard cardInfo={githubData.node} />
-{/each}
+<div class="card-wrapper">
+  {#each githubDatas as githubData}
+    <RepoCard cardInfo={githubData.node} />
+  {/each}
+</div>

@@ -5,6 +5,9 @@ so why would we need micro frontend as a first place. Imagine a scenario that yo
 ### Solutions
 
 Iframe
+
 Sperate page
+
 Webpack module federation
+
 Custom build
